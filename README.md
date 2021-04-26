@@ -43,3 +43,5 @@ Then run <code>npm i</code> and <code>npm start</code>
 
 For more detailed instructions, [click here](#)
 
+### NOTED: if you got an issue/ error you can clear the local storage or cookies
+>> todo open developer tools on browser, then Application , Right click and clear inside a Local storage tab. >> Refresh.  
