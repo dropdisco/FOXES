@@ -4,7 +4,7 @@ FOXES MEDIA using  (Postgres, Skynet-Js, SkynetLabs).
 
 This is the frontend repository, built with React + Redux. If you are looking for the backend repository, [click here](#)
 
-Check out the [deployed site](https://100alh6e0dr8glrdvpc99uu4gkf6lgnh6v7qsuo3hu3l472st9ti3cg.siasky.net)
+# Check out the [deployed site](https://100alh6e0dr8glrdvpc99uu4gkf6lgnh6v7qsuo3hu3l472st9ti3cg.siasky.net)
 
 ## Core packages
 
