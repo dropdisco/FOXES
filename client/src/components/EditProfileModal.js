@@ -8,7 +8,6 @@ import useInput from "../hooks/useInput";
 import { updateUser } from "../reducers/user";
 import { updateProfile } from "../reducers/profile";
 import { scfoxes, updateUserLocalSt, upload } from "../utils";
-import NewSkyClient from "./SkyClient";
 
 const openModal = keyframes`
 	from {
@@ -32,9 +31,10 @@ const Wrapper = styled.div`
   .edit-profile {
     width: 580px;
     border-radius: 4px;
-    background: ${(props) => props.theme.grey};
+    background: #040407;
     margin: 36px auto;
-    box-shadow: 0px 0px 0px rgba(0, 0, 0, 0.4), 0px 0px 4px rgba(0, 0, 0, 0.25);
+    box-shadow: 0px 0px 0px rgb(0 0 0 / 40%), 0px 0px 4px rgb(0 0 0 / 25%);
+    border: 2px solid #009ad0;
   }
 
   .edit-profile img {
@@ -86,7 +86,25 @@ const Wrapper = styled.div`
     position: relative;
     top: -1px;
   }
-
+.save-button {
+  padding: 0.4rem 1rem;
+  background: #040407;
+  color: #dfdef5;
+  border: 1px solid #008ec5;
+  border-radius: 3px;
+  -webkit-letter-spacing: 2px;
+  -moz-letter-spacing: 2px;
+  -ms-letter-spacing: 2px;
+  font-weight: 600;
+  letter-spacing: 2px;
+}
+.warn-edit-profile {
+  display: block;
+  text-align: center; 
+  font-size: 12px;
+  text-transform: uppercase;
+  background: #00a1d3;
+}
   @media screen and (max-width: 600px) {
     .edit-profile {
       width: 90%;
@@ -148,23 +166,23 @@ const EditProfileModal = ({ closeModal }) => {
       username: username.value,
     };
 
-    const setJSON = async (privateKey, dataKey, userID, data) => {
-      try {
-        await NewSkyClient.db.setJSON(privateKey, dataKey, userID, data);
-      } catch (error) {
-        console.log('error');
-      }
-    };
+    // const setJSON = async (privateKey, dataKey, userID, data) => {
+    //   try {
+    //     await NewSkyClient.db.setJSON(privateKey, dataKey, userID, data);
+    //   } catch (error) {
+    //     console.log('error');
+    //   }
+    // };
 
     if (avatar) data.avatar = avatar;
     if (cover) data.cover = cover;
 
     const updates = { ...data, channelDescription: channelDesc.value };
     dispatch(updateProfile(updates));
-    setJSON(updates);
+    // setJSON(updates);
     dispatch(updateUser(updates));
     scfoxes(`${process.env.REACT_APP_FOXES_SKY}/users`, {
-      body: setJSON,
+      body: updates,
       method: "PUT",
     });
 
@@ -182,7 +200,7 @@ const EditProfileModal = ({ closeModal }) => {
             <CloseIcon onClick={() => closeModal()} />
             <span>Edit Profile</span>
           </h3>
-          <Button onClick={handleEditProfile}>Save</Button>
+          <Button className="save-button" onClick={handleEditProfile}>Save</Button>
         </div>
 
         <div className="cover-upload-container">
@@ -246,6 +264,7 @@ const EditProfileModal = ({ closeModal }) => {
             value={channelDesc.value}
             onChange={channelDesc.onChange}
           />
+          <span className="warn-edit-profile">Change : Profile Name : Avatar : Cover Image</span>
         </form>
       </div>
     </Wrapper>

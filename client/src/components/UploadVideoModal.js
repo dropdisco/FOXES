@@ -12,9 +12,13 @@ import { scfoxes } from "../utils";
 const openModal = keyframes`
 	from {
 		opacity: 0;
+    transform: translateY(-400px);
+    transition: all 500ms ease-out;
+    transition: opacity 2000ms ease-in-out;
 	}
 	to {
 		opacity: 1;
+    transform: translateY(0px);
 	}
 `;
 
@@ -32,9 +36,10 @@ const Wrapper = styled.div`
   .modal-content {
     width: 600px;
     margin: 4rem auto;
-    background: ${(props) => props.theme.grey};
-    border-radius: 3px;
-    box-shadow: 0px 0px 0px rgba(0, 0, 0, 0.4), 0px 0px 4px rgba(0, 0, 0, 0.25);
+    background: #040407;
+    box-shadow: 0px 0px 0px rgb(0 0 0 / 40%), 0px 0px 4px rgb(0 0 0 / 25%);
+    border: 2px solid #009ad0;
+    border-radius: 4px;
   }
 
   .modal-header {
@@ -94,6 +99,7 @@ const Wrapper = styled.div`
 
   button {
     margin-left: auto;
+    
   }
 
   img {
@@ -179,7 +185,7 @@ const UploadVideoModal = ({ previewVideo, closeModal, url, thumbnail }) => {
             <h3>Upload Video</h3>
           </div>
           <div style={{ display: url ? "block" : "none" }}>
-            <Button onClick={handleTab}>
+            <Button className="save-button" onClick={handleTab}>
               {tab === "PREVIEW" ? "Next" : "Upload"}
             </Button>
           </div>

@@ -1,8 +1,6 @@
 import axios from "axios";
 import { toast } from "react-toastify";
 
-
-
 export const scfoxes = async (endpoint, { body, ...customConfig } = {}) => {
   const user = JSON.parse(localStorage.getItem("user"));
 
@@ -71,7 +69,7 @@ export const timeSince = (timestamp) => {
 
 export const upload = async (resourceType, file) => {
   const formData = new FormData();
-  formData.append("upload_preset", "youtubeclone");
+  formData.append("upload_preset", "agindropdisco");
   formData.append("file", file);
 
   let toastId = null;
@@ -116,6 +114,7 @@ export const authenticate = async (type, data) => {
 
       return { ...user, token };
     }
+    
   } catch (err) {
     console.log(err);
   }

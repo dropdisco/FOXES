@@ -1,13 +1,16 @@
 import React from "react";
 import { NavLink } from "react-router-dom";
 import styled from "styled-components";
-import {
-  HomeIcon,
-  TrendingIcon,
-  SubIcon,
-  HistoryIcon,
-  WatchIcon,
-} from "./Icons";
+
+import { 
+  GiGroundSprout,
+  GiBuyCard,
+  GiKoala,
+  GiHoneyJar,
+  GiBurningEye
+} from "react-icons/gi";
+
+
 
 const Wrapper = styled.div`
   position: fixed;
@@ -34,7 +37,7 @@ const Wrapper = styled.div`
   .icons svg {
     width: 30px;
     height: 30px;
-    fill: ${(props) => props.theme.darkGrey};
+    fill: #1f4d65a1;
   }
 
   .icons img {
@@ -45,7 +48,7 @@ const Wrapper = styled.div`
   }
 
   .active svg {
-    fill: ${(props) => props.theme.primaryColor};
+    fill: #10acfdc2;
   }
 
   @media screen and (max-width: 500px) {
@@ -58,23 +61,23 @@ const BottomBar = () => {
     <Wrapper>
       <div className="icons">
         <NavLink activeClassName="active" exact to="/">
-          <HomeIcon />
-        </NavLink>
-
-        <NavLink activeClassName="active" exact to="/feed/trending">
-          <TrendingIcon />
-        </NavLink>
-
-        <NavLink activeClassName="active" exact to="/feed/subscriptions">
-          <SubIcon />
-        </NavLink>
-
-        <NavLink activeClassName="active" exact to="/feed/history">
-          <HistoryIcon />
+          <GiGroundSprout />
         </NavLink>
 
         <NavLink activeClassName="active" exact to="/feed/liked_videos">
-          <WatchIcon />
+          <GiKoala />
+        </NavLink>
+        
+        <NavLink activeClassName="active" exact to="/feed/subscriptions">
+          <GiBuyCard />
+        </NavLink>
+
+        <NavLink activeClassName="active" exact to="/feed/history">
+          <GiHoneyJar />
+        </NavLink>
+
+        <NavLink activeClassName="active" exact to="/feed/trending">
+          <GiBurningEye />
         </NavLink>
       </div>
     </Wrapper>

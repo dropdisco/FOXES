@@ -19,7 +19,7 @@ const UploadVideo = () => {
     if (file) {
       const size = file.size / 1000000;
 
-      if (size > 30) {
+      if (size > 100) {
         return toast.error("Sorry, file size should be less than 30MB");
       }
 

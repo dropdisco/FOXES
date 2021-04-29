@@ -8,8 +8,9 @@ const Wrapper = styled.div`
     width: 100%;
     height: 180px;
     object-fit: cover;
-    box-shadow: 0px 1px 5px 0px rgba(0, 0, 0, 0.2);
+    box-shadow: 10px 5px 5px 0px rgb(12 11 19);
     border-radius: 4px;
+    border: 2px solid #009ad0;
   }
 
   .video-info-container {

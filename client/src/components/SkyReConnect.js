@@ -1,13 +1,11 @@
 import React, { useState, useEffect } from "react";
 import { useDispatch } from "react-redux";
 import styled from "styled-components";
-import faker from "faker";
-import { skyconnect } from "../reducers/user";
+import { skyreconnect } from "../reducers/user";
 import { ContentRecordDAC } from "@skynetlabs/content-record-library";
 import { SkynetClient } from "skynet-js";
-import LogoutMySky from "./ButtonExcecution";
-import FoxesLoader from "../styles/Loader";
 import foxesLogo from "../assets/logo.svg";
+import FoxesLoader from "../styles/Loader";
 
 export const StyledAuth = styled.div`
     margin: 0 auto;
@@ -80,7 +78,6 @@ export const StyledAuth = styled.div`
     position: absolute;
     left: 100px;
   }
-
   .foxes_uiles-right {
     position: absolute;
     right: 100px;
@@ -137,7 +134,6 @@ export const StyledAuth = styled.div`
     .foxes_uiles-left {
       left: 30px;
     }
-
     .foxes_uiles-right {
       right: 30px;
     }
@@ -145,59 +141,46 @@ export const StyledAuth = styled.div`
 
 `;
 
-
-const SkyConnect = ({ setAuth }) => {
-
-
-  // 
+const SkyConnect = ({setAuth}) => {
   const dispatch = useDispatch();
   const [mySky, setMySky] = useState("");
   const [userID, setUserID] = useState("");
   const [loading, setLoading] = useState(false);
   const [loggedIn, setLoggedIn] = useState(null);
-
   const portal = "https://siasky.net";
   const client = new SkynetClient(portal);
-  const textFoxes = "Foxes"
-  const textFoxesUsername = "FoxesUser"
-  const firstname = faker.datatype.number({'min': 10, 'max': 50});
-  const lastname = textFoxes + firstname;
-  const username = textFoxesUsername + firstname;
+  const skykey = "PAF6_Yq2WW_DafoVCl54eyuAK2B2q4RJuSOwFtoihUCE3w";
   const dataDomain = window.location.hostname === "localhost" ? "localhost" : "skey.hns";
   const contentRecord = new ContentRecordDAC();
-  const skykey = "PAF6_Yq2WW_DafoVCl54eyuAK2B2q4RJuSOwFtoihUCE3w";
 
-  const mySkyConnect = async (e) => {
+  const mySkyReConnect = async (e) => {
     e.preventDefault();
     setLoading(true);
     const mySky = await client.loadMySky(dataDomain);
+
     const status = await mySky.requestLoginAccess();
     await mySky.loadDacs(contentRecord);
     const userID = await mySky.userID();
     const payload = {
-      username,
-      firstname,
-      lastname,
       userID,
       skykey
     };
     setLoggedIn(status);
     if (status) {
       setUserID(await mySky.userID());
-      console.table({ username, firstname, lastname, userID });
+      console.table({  userID });
       setLoading(false);
-      dispatch(skyconnect({ payload }));
+      dispatch(skyreconnect({ payload }));
     } 
   };
+
   const mySkyDisconnect = async () => {
     await mySky.logout();
     setLoggedIn(false);
     setUserID("");
   };
-  const buttonSetting = async () => {
-    await LogoutMySky();
-    setAuth("SkyReConnect");
-  }
+
+
 
   useEffect(() => {
     const initMySky = async () => {
@@ -228,7 +211,7 @@ const SkyConnect = ({ setAuth }) => {
 
   return (
     <StyledAuth>
-      <div className="foxes_uiles-left">
+       <div className="foxes_uiles-left">
       <div className="left_uiles uiles">
         <div className="sm_uiles top"></div>
         <div className="mid_uiles"></div>
@@ -249,12 +232,13 @@ const SkyConnect = ({ setAuth }) => {
       <form style={{textAlign: "center"}}>
         {loading && (
           <button size="medium">
-            <FoxesLoader />
+           <FoxesLoader />
+
           </button>
         )}
         {!loading && !loggedIn && (
-          <button className="foxesBtn" onClick={mySkyConnect} size="medium">
-            MySky Create
+          <button className="foxesBtn" onClick={mySkyReConnect}  size="medium">
+             MySky Connect
           </button>
         )}
         {!loading && loggedIn && (
@@ -264,8 +248,8 @@ const SkyConnect = ({ setAuth }) => {
           </button>
         )}
           <div className="action input-group">
-          <span className="pointer sky-connect-wtih" onClick={() => buttonSetting()}>
-            <span className="foxes-bordering">Connect With MySky</span>
+          <span className="pointer sky-connect-wtih" onClick={() => setAuth("SkyConnect")}>
+            <span className="foxes-bordering">Create MySky</span>
           </span>
         </div>
       </form>

@@ -2,7 +2,10 @@ import React from "react";
 import { useSelector } from "react-redux";
 import styled from "styled-components";
 import { Link } from "react-router-dom";
-import { Label, Icon } from 'semantic-ui-react'
+import Label from "../styles/Label";
+import { 
+  GiCowled
+  } from "react-icons/gi";
 const Wrapper = styled.div`
   display: grid;
   grid-template-columns: repeat(4, 1fr);
@@ -49,8 +52,8 @@ const ChannelTabChannels = () => {
             <h3>{channel.username}</h3>
             <p className="secondary">{channel.subscribersCount} subscribers</p>
             <div>
-            <Label size='mini'>
-              <Icon name="external square alternate"/>
+            <Label>
+              <GiCowled className="tpmin1"/>
               <span className="userID-width">{channel.userID}</span>
           </Label>
             </div>

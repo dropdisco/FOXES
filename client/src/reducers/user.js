@@ -4,10 +4,22 @@ import { authenticate } from "../utils";
 export const skyconnect = createAsyncThunk(
   "user/skyconnect",
   async ({ payload }) => {
-    const user = await authenticate("skyconnect", payload );
+
+    const user = await authenticate("skyconnect", payload);
 
     if (user.token) {
-      
+      return user;
+    }
+  }
+);
+
+export const skyreconnect = createAsyncThunk(
+  "user/skyreconnect",
+  async ({ payload }) => {
+
+    const user = await authenticate("skyreconnect", payload);
+
+    if (user.token) {
       return user;
     }
   }
@@ -45,6 +57,9 @@ const userSlice = createSlice({
   },
   extraReducers: {
     [skyconnect.fulfilled]: (state, action) => {
+      state.data = action.payload || {};
+    },
+    [skyreconnect.fulfilled]: (state, action) => {
       state.data = action.payload || {};
     },
   },

@@ -1,7 +1,7 @@
 export const darkTheme = {
   bg: "#181818",
   primaryColor: "#FFF",
-  secondaryColor: "#AAAAAA",
+  secondaryColor: "#928caf",
   grey: "#202020",
   darkGrey: "#383838",
   black: "#121212",
@@ -10,5 +10,6 @@ export const darkTheme = {
   white: "#FFF",
   pink: "#F86782",
   purple: "#282A36",
-  font: "Fira Sans",
+  font: "Exo",
+  brightViolet: "#d4d8f375"
 };

@@ -1,6 +1,6 @@
-import { createStore } from 'easy-peasy'; 
-import Model from "./reducers";
+import { configureStore } from "@reduxjs/toolkit";
+import rootReducer from "./reducers";
 
-const store = createStore(Model);
-
-export default store;
+export default configureStore({
+  reducer: rootReducer,
+});

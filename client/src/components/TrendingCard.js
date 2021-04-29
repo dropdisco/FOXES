@@ -9,9 +9,12 @@ const Wrapper = styled.div`
 
   .thumb {
     width: 250px;
-    height: 140px;
-    box-shadow: 0px 1px 5px 0px rgba(0, 0, 0, 0.2);
+    height: 150px;
     border-radius: 4px;
+    box-shadow: 10px 5px 5px 0px rgb(12 11 19);
+    border-radius: 4px;
+    border: 2px solid #009ad0;
+    
   }
 
   .video-info-container {

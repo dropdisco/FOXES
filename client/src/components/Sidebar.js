@@ -3,20 +3,26 @@ import { useDispatch, useSelector } from "react-redux";
 import styled, { css } from "styled-components";
 import { NavLink } from "react-router-dom";
 import Subscriptions from "./Subscriptions";
-import {
-  HomeIcon,
-  TrendingIcon,
-  SubIcon,
-  LibIcon,
-  HistoryIcon,
-  VidIcon,
-  LikeIcon,
-} from "./Icons";
+
+
+import { 
+  GiGroundSprout,
+  GiBuyCard,
+  GiBurningEye,
+  GiHoneyJar,
+  GiCubes,
+  GiTrade,
+  GiKoala
+} from "react-icons/gi";
+
+
+
+
 import { closeSidebar } from "../reducers/sidebar";
 
 const SidebarWrapper = styled.div`
   position: fixed;
-  top: 55px;
+  top: 100px;
   left: 0;
   height: 100vh;
   width: 240px;
@@ -36,21 +42,24 @@ const SidebarWrapper = styled.div`
     align-items: center;
     padding: 0.2rem 0;
     padding-left: 1.5rem;
-    margin-bottom: 0.4rem;
+    margin-bottom: 1.2rem;
   }
 
   .icon:not(.hover-disable):hover {
-    background: ${(props) => props.theme.darkGrey};
+    background: #4381a045;
     cursor: pointer;
+    border-radius: 25px;
   }
 
   .active div {
-    background: ${(props) => props.theme.darkGrey};
+    background: #459eca1c;
     cursor: pointer;
+    border-radius: 25px;
+    box-shadow: 0px 1px 0 0 #00dcfff7;
   }
 
   .active svg {
-    fill: #fff;
+    fill: #10acfdc2;
   }
 
   .icon span {
@@ -87,7 +96,7 @@ const Sidebar = () => {
         activeClassName="active"
       >
         <div className="icon">
-          <HomeIcon />
+          <GiGroundSprout />
           <span>Home</span>
         </div>
       </NavLink>
@@ -98,7 +107,7 @@ const Sidebar = () => {
         activeClassName="active"
       >
         <div className="icon">
-          <TrendingIcon />
+          <GiBurningEye />
           <span>Trending</span>
         </div>
       </NavLink>
@@ -109,7 +118,7 @@ const Sidebar = () => {
         activeClassName="active"
       >
         <div className="icon">
-          <SubIcon />
+          <GiBuyCard />
           <span>Subscriptions</span>
         </div>
       </NavLink>
@@ -122,7 +131,7 @@ const Sidebar = () => {
         activeClassName="active"
       >
         <div className="icon">
-          <LibIcon />
+          <GiCubes />
           <span>Library</span>
         </div>
       </NavLink>
@@ -133,7 +142,7 @@ const Sidebar = () => {
         activeClassName="active"
       >
         <div className="icon">
-          <HistoryIcon />
+          <GiHoneyJar />
           <span>History</span>
         </div>
       </NavLink>
@@ -144,7 +153,7 @@ const Sidebar = () => {
         activeClassName="active"
       >
         <div className="icon">
-          <VidIcon />
+          <GiTrade />
           <span>Your videos</span>
         </div>
       </NavLink>
@@ -155,7 +164,7 @@ const Sidebar = () => {
         activeClassName="active"
       >
         <div className="icon">
-          <LikeIcon />
+          <GiKoala />
           <span>Liked videos</span>
         </div>
       </NavLink>

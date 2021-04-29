@@ -3,7 +3,10 @@ import { useDispatch, useSelector } from "react-redux";
 import styled from "styled-components";
 import { Link } from "react-router-dom";
 import { closeSidebar } from "../reducers/sidebar";
-import { Label, Icon } from 'semantic-ui-react'
+import { 
+  GiGooeyDaemon
+} from "react-icons/gi";
+
 const Wrapper = styled.div`
   h4 {
     text-transform: uppercase;
@@ -41,8 +44,10 @@ const Subscriptions = () => {
 
   return (
     <Wrapper>
-      {channels.length > 0 && <h4>Subscriptions</h4>}
-
+      {channels.length > 0 && 
+      <h4>
+       <GiGooeyDaemon /> Subscriptions
+        </h4>}
       {channels?.map((channel) => (
         <Link
           key={channel.id}
@@ -52,10 +57,7 @@ const Subscriptions = () => {
           <div className="channel">
             <img src={channel.avatar} alt="avatar" />
             <div>{channel.username}</div>
-            <Label size='mini'>
-              <Icon name="external square alternate"/>
-              <span className="userID-width">{channel.userID}</span>
-          </Label>
+              {/* <span className="userID-width">{channel.userID}</span> */}
           </div>
         </Link>
       ))}

@@ -108,6 +108,9 @@ const Comments = () => {
                     {comment.User?.username}
                   </Link>
                 </span>
+                <span>
+                  <Link to={`/channel/${comment.User?.id}`}/> 
+                </span>
                 <span style={{ marginLeft: "0.6rem" }}>
                   {timeSince(comment.createdAt)} ago
                 </span>

@@ -5,7 +5,7 @@ import { ToastContainer } from "react-toastify";
 import GlobalStyle from "./styles/GlobalStyle";
 import { darkTheme } from "./styles/theme";
 import Router from "./Router";
-import SkyConnect from "./components/SkyConnect";
+import Auth from "./components/Auth";
 import "react-toastify/dist/ReactToastify.css";
 
 const App = () => {
@@ -15,13 +15,12 @@ const App = () => {
     <ThemeProvider theme={darkTheme}>
       <GlobalStyle />
       <ToastContainer
-        autoClose={2500}
+        autoClose={7777}
         position="top-right"
         closeButton={false}
       />
-      {token ? <Router /> : <SkyConnect />}
+      {token ? <Router /> : <Auth />}
     </ThemeProvider>
-
   );
 };
 

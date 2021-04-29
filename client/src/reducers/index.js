@@ -1,5 +1,6 @@
+import { combineReducers } from "redux";
 
-import { reducer } from 'easy-peasy'; 
+// reducers
 import user from "./user";
 import feed from "./feed";
 import video from "./video";
@@ -11,23 +12,17 @@ import searchResult from "./searchResult";
 import trending from "./trending";
 import likedVideo from "./likedVideo";
 import history from "./history";
-import mySkyModel from "./mySkyModel";
-import hnsModel  from './hnsModel';
 
-const Model = {
-  mySky:mySkyModel,
-  hns: hnsModel,
-  user: reducer(user),
-  feed:reducer(feed),
-  video:reducer(video),
-  profile:reducer(profile),
-  sidebar:reducer(sidebar),
-  recommendation:reducer(recommendation),
-  channelRecommendation:reducer(channelRecommendation),
-  searchResult:reducer(searchResult),
-  trending:reducer(trending),
-  likedVideo:reducer(likedVideo),
-  history:reducer(history)
-};
-
-export default Model;
+export default combineReducers({
+  user,
+  feed,
+  video,
+  profile,
+  sidebar,
+  recommendation,
+  channelRecommendation,
+  searchResult,
+  trending,
+  likedVideo,
+  history,
+});

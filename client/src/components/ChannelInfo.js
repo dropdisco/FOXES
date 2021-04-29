@@ -14,6 +14,17 @@ const Wrapper = styled.div`
   justify-content: space-between;
   margin: 2rem 0;
 
+.subscribesss {
+  padding: 0.4rem 1rem;
+  background: #12101b;
+  color: #FFF;
+  border: 1px solid #0a768d;
+  border-radius: 3px;
+  -webkit-letter-spacing: 1.1px;
+  -moz-letter-spacing: 1.1px;
+  -ms-letter-spacing: 1.1px;
+  letter-spacing: 1.1px;
+}
   .avatar-channel {
     display: flex;
     align-items: center;
@@ -113,7 +124,6 @@ const ChannelInfo = ({ search, channel }) => {
             <span className="to-hide">•</span>{" "}
             <span className="to-hide">{channel.videosCount} videos</span>
           </p>
-
           {channel.channelDescription && (
             <p className="description secondary">
               {channel.channelDescription?.length < 65
@@ -125,7 +135,7 @@ const ChannelInfo = ({ search, channel }) => {
       </Link>
 
       {!channel.isMe && !channel.isSubscribed && (
-        <Button
+        <Button className="subscribesss"
           onClick={() =>
             handleSubscribe({
               id: channel.id,

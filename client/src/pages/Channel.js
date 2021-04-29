@@ -11,7 +11,10 @@ import ChannelTabChannels from "../components/ChannelTabChannels";
 import NoResults from "../components/NoResults";
 import Button from "../styles/Button";
 import Skeleton from "../skeletons/ChannelSkeleton";
-import { Label, Icon } from 'semantic-ui-react';
+import Label from "../styles/Label";
+import { 
+  GiCowled
+  } from "react-icons/gi";
 // reducers and utils
 import { addChannel, removeChannel } from "../reducers/user";
 import {
@@ -23,8 +26,8 @@ import {
 import { scfoxes, addChannelLocalSt, removeChannelLocalSt } from "../utils";
 
 const activeTabStyle = {
-  borderBottom: "2px solid white",
-  color: "white",
+  borderBottom: "2px solid #c8da99",
+  color: "#a4bbcc",
 };
 
 const Wrapper = styled.div`
@@ -35,7 +38,22 @@ const Wrapper = styled.div`
   .cover {
     height: 270px;
   }
-
+  .fx-subscribers {
+    background: #88c1e23b;
+    letter-spacing: 2px;
+    border-bottom: 1px solid #142e4cfa;
+    position: relative;
+    top: 4px;
+    line-height: 1;
+    vertical-align: baseline;
+    margin: 0 .14285714em;
+    padding: .1833em .433em;
+    color: rgb(223 233 242);
+    text-transform: none;
+    border-left: 0.1px solid #14294291;
+    border-radius: .28571429rem;
+    -webkit-transition: background .1s ease;
+  }
   .cover img {
     width: 100%;
     height: 100%;
@@ -47,6 +65,33 @@ const Wrapper = styled.div`
     background: #110f17;
   }
 
+.subscribesss {
+  padding: 0.2rem 1rem;
+  background: #12101b;
+  color: #FFF;
+  border: 1px solid #0a768d;
+  border-radius: 3px;
+  -webkit-letter-spacing: 1.1px;
+  -moz-letter-spacing: 1.1px;
+  -ms-letter-spacing: 1.1px;
+  letter-spacing: 1.1px;
+}
+.doneSubscribe {
+  padding: 0.2rem 1rem;
+  background: #12101b;
+  color: #FFF;
+  border: 1px solid #e7e297;
+  border-radius: 3px;
+  -webkit-letter-spacing: 1.1px;
+  -moz-letter-spacing: 1.1px;
+  -ms-letter-spacing: 1.1px;
+  -webkit-letter-spacing: 1.1px;
+  -moz-letter-spacing: 1.1px;
+  -ms-letter-spacing: 1.1px;
+  font-size: 12px;
+  text-align: center;
+  justify-content: center;
+}
   .header {
     width: 80%;
     display: flex;
@@ -170,12 +215,12 @@ const Channel = () => {
             <div>
               <h3>{profile.username}</h3>
               <div>
-              <Label size='mini'>
-              <Icon name="external square alternate"/>
+              <Label>
+              <GiCowled className="tpmin1"/>
               <span className="userID-width">{profile.userID}</span>
               </Label>
               </div>
-              <span className="secondary">
+              <span className="secondary fx-subscribers">
                 {profile.subscribersCount} subscribers
               </span>
             </div>
@@ -184,13 +229,13 @@ const Channel = () => {
           {profile.isMe && <EditProfile />}
 
           {!profile.isMe && profile.isSubscribed && (
-            <Button style={{color: "#12101b", background: "#13afd8"}} onClick={() => handleUnsubscribe(profile.id)}>
+            <Button className="doneSubscribe" onClick={() => handleUnsubscribe(profile.id)}>
               Subscribed
             </Button>
           )}
 
           {!profile.isMe && !profile.isSubscribed && (
-            <Button
+            <Button className="subscribesss"
               onClick={() =>
                 handleSubscribe({
                   id: profile.id,
