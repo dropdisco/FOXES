@@ -38,6 +38,54 @@ FOXES MEDIA using  (Postgres, Skynet-Js, SkynetLabs).
 9. Liked videos
 10. History
 
+## Recomended Video View 
+
+<img src="./ss/video-recomended.png">
+
+
+
+
+## Trending Video View 
+
+<img src="./ss/trending-video.png">
+
+
+
+
+
+## Edit Profile View 
+
+<img src="./ss/edit-profile.png">
+
+
+
+
+
+## Upload Video and Watch The Preview while Upload Progress 
+
+<img src="./ss/upload-video-and-watch-preview.png">
+
+
+
+
+
+## Mobile UI View
+<p align="center">
+<img src="./ss/mobile-ui.png">
+</p>
+
+
+
+
+## Mobile UI Watch View
+<p align="center">
+<img src="./ss/mobile-ui-watch.png">
+</p>
+
+
+
+
+
 ## Running locally
 
 At the root of your project create an .env file with the following contents:
