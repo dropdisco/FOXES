@@ -1,6 +1,11 @@
-# FOXES MEDIA A.K.A Youtube 
+# FOXES MEDIA 
+
+[![Netlify Status](https://api.netlify.com/api/v1/badges/772e0672-f57b-4940-9f05-e432607e3879/deploy-status)](https://app.netlify.com/sites/festive-hopper-a48689/deploys)
+
+
 
 FOXES MEDIA using  (Postgres, Skynet-Js, SkynetLabs). 
+
 
 
 ### Check out the deployed site
