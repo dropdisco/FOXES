@@ -14,29 +14,6 @@ FOXES MEDIA using  (Postgres, Skynet-Js, SkynetLabs).
 
 # Netlify [DEMO](https://foxes-media.netlify.app)
 
-## Core packages
-
-1. Redux - State Management
-2. React Router - Routing
-3. Provider - Skynet-js && SkynetLabs
-
-## Video uploads
->> The requirement for this Hackathon (Build phase) only two part. ( Content Record DAC and MySKy ). 
->>> So for uploading Video & Image / Thumbnail we use cloudinary hosting. 
-
-
-## Features
-
-1. Connect using MySky
-2. Upload video
-3. Search video by channel name, userID, username
-4. Search video by title, description
-5. Like/Dislike video
-6. Subscribe/Unsubscribe from channels
-7. Add comment
-8. Edit profile (avatar, cover)
-9. Liked videos
-10. History
 
 ## Recomended Video View 
 
@@ -84,6 +61,30 @@ FOXES MEDIA using  (Postgres, Skynet-Js, SkynetLabs).
 
 
 
+
+## Core packages
+
+1. Redux - State Management
+2. React Router - Routing
+3. Provider - Skynet-js && SkynetLabs
+
+## Video uploads
+>> The requirement for this Hackathon (Build phase) only two part. ( Content Record DAC and MySKy ). 
+>>> So for uploading Video & Image / Thumbnail we use cloudinary hosting. 
+
+
+## Features
+
+1. Connect using MySky
+2. Upload video
+3. Search video by channel name, userID, username
+4. Search video by title, description
+5. Like/Dislike video
+6. Subscribe/Unsubscribe from channels
+7. Add comment
+8. Edit profile (avatar, cover)
+9. Liked videos
+10. History
 
 
 ## Running locally
