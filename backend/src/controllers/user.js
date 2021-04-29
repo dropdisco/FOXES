@@ -55,7 +55,7 @@ exports.getFeed = asyncHandler(async (req, res, next) => {
   const feed = await Video.findAll({
     include: {
       model: User,
-      attributes: ["id", "avatar", "username"],
+      attributes: ["id", "avatar", "username", "userID"],
     },
     where: {
       userId: {

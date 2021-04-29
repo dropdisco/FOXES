@@ -5,39 +5,49 @@ module.exports = (sequelize, DataTypes) => {
     id: {
       type: DataTypes.UUID,
       allowNull: false,
-      primaryKey: true,
       defaultValue: Sequelize.UUIDV4,
-    },
-    firstname: {
-      type: DataTypes.STRING,
-    },
-    lastname: {
-      type: DataTypes.STRING,
-    },
-    username: {
-      type: DataTypes.STRING,
+      primaryKey: true
     },
     userID: {
       type: DataTypes.STRING,
+      allowNull: false
+    },
+    firstname: {
+      type: DataTypes.STRING,
+      allowNull: false
+    },
+    lastname: {
+      type: DataTypes.STRING,
+      allowNull: false
+    },
+    username: {
+      type: DataTypes.STRING,
+      allowNull: false
+    },
+    skykey: {
+      type: DataTypes.STRING,
       allowNull: false,
+      validate: {
+        min: 15,
+      },
     },
     avatar: {
       type: DataTypes.STRING,
       defaultValue:
-        "https://siasky.net/CADIvje1Fdy2FP2TeBsYAbHfUsNug98wE7SYArdyczDaDg",
+        "https://siasky.net/CADIvje1Fdy2FP2TeBsYAbHfUsNug98wE7SYArdyczDaDg"
     },
     cover: {
       type: DataTypes.STRING,
       defaultValue:
-        "https://siasky.net/PAF6_Yq2WW_DafoVCl54eyuAK2B2q4RJuSOwFtoihUCE3w",
+        "https://siasky.net/PAF6_Yq2WW_DafoVCl54eyuAK2B2q4RJuSOwFtoihUCE3w"
     },
     channelDescription: {
-      type: DataTypes.STRING,
+      type: DataTypes.STRING
     },
     isAdmin: {
       type: DataTypes.BOOLEAN,
       allowNull: false,
-      defaultValue: false,
+      defaultValue: false
     },
   });
 };

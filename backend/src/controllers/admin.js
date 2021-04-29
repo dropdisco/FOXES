@@ -27,7 +27,7 @@ exports.removeVideo = asyncHandler(async (req, res, next) => {
 
 exports.getVideos = asyncHandler(async (req, res, next) => {
   const videos = await Video.findAll({
-    attributes: ["id", "title", "description", "url", "thumbnail", "userId"],
+    attributes: ["id", "title", "description", "url", "thumbnail"],
   });
 
   res.status(200).json({ success: true, data: videos });

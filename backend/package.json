@@ -18,7 +18,7 @@
     "pg": "^8.2.1",
     "pg-hstore": "^2.3.3",
     "sequelize": "^6.2.3",
-    "skynet-js": "4.0.0-beta"
+    "skynet-js": "4.0.4-beta"
   },
   "devDependencies": {
     "nodemon": "^2.0.4"
