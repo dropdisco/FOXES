@@ -10,7 +10,7 @@ FOXES MEDIA using  (Postgres, Skynet-Js, SkynetLabs).
 
 ### Check out the deployed site
 
-# SiaSkynet [DEMO](https://00087733m6vd2b20rrvddpjvcpmd16ukkb5dst2rrhva1dljctjgfco.siasky.net)
+# SiaSkynet [DEMO](https://000fdf2l0t2qgn0nihdauhpuiv8e4jsfoshssvdinq72ud3ifj8nnk0.siasky.net)
 
 # Netlify [DEMO](https://foxes-media.netlify.app)
 
