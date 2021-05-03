@@ -10,14 +10,64 @@ FOXES MEDIA using  (Postgres, Skynet-Js, SkynetLabs).
 
 ### Check out the deployed site
 
-# SiaSkynet [DEMO](https://000fdf2l0t2qgn0nihdauhpuiv8e4jsfoshssvdinq72ud3ifj8nnk0.siasky.net)
+
+# SiaSkynet [DEMO](https://0008umghp419r4vvf17m8lb369gbketccmcdvpee5puhhebtnoj0ruo.siasky.net)
+
 
 # Netlify [DEMO](https://foxes-media.netlify.app)
+
+
+### in the end of Skynet url i use tag "#.mp4" to support media player for Videojs that i use for Player
+
+
+### [url sample](https://siasky.net/AACCUKcGJmzUk5FdR0yee8ghUO3NLSzfNVVV9voe4zbGyA#.mp4);
+
+
+#### remove the tag if you use "ReactPlayer", "Plyr" or "video-react".
+
+
+### [sources](https://github.com/Agin-DropDisco/FOXES/blob/e168b4bf6c3dcfed5d9507530cb5a0a1dfcc0e1f/client/src/components/UploadVideo.js#L51)
+
+
+### [see how i use Skynet userID in Sequelize Model](https://github.com/Agin-DropDisco/FOXES/blob/4bf0365d87b78c2ae318f6b062e18aaa0a81e58a/backend/src/controllers/auth.js#L26)
+
+
+
+## Upload Video and Thumbnail and Push to Skynet
+
+<img src="./ss/create-thumbnail.png">
+
+
+
+## Modal Popup Will set to true if all the processing file has been done
+
+<img src="./ss/upload-andpush-toskynet.png">
+
+<p align = "center">
+<img src="./ss/loader.png">
+</p>
+
+
+
+
+## Home View 
+<img src="./ss/home.png">
+
+
+
+
+## Profile Channel View
+<img src="./ss/profile-channel.png">
+
+
+
 
 
 ## Recomended Video View 
 
 <img src="./ss/video-recomended.png">
+
+
 
 
 
@@ -38,18 +88,11 @@ FOXES MEDIA using  (Postgres, Skynet-Js, SkynetLabs).
 
 
 
-## Upload Video and Watch The Preview while Upload Progress 
-
-<img src="./ss/upload-video-and-watch-preview.png">
-
-
-
-
-
 ## Mobile UI View
 <p align="center">
 <img src="./ss/mobile-ui.png">
 </p>
+
 
 
 
@@ -62,15 +105,13 @@ FOXES MEDIA using  (Postgres, Skynet-Js, SkynetLabs).
 
 
 
+
 ## Core packages
 
-1. Redux - State Management
-2. React Router - Routing
-3. Provider - Skynet-js && SkynetLabs
-
-## Video uploads
->> The requirement for this Hackathon (Build phase) only two part. ( Content Record DAC and MySKy ). 
->>> So for uploading Video & Image / Thumbnail we use cloudinary hosting. 
+1. Redux 
+2. React Hash Router as * Router  - Routing
+3. Skynet-js && SkynetLabs
+4. VideoJs
 
 
 ## Features
@@ -94,11 +135,9 @@ At the root of your project create an .env file with the following contents:
 ```bash
 # BE stands for Backend Endpoint
 REACT_APP_FOXES_SKY= <Your Backend Endpoint>
+REACT_APP_SKYNET_PORTAL = <Portal>
 ```
 
 Then run <code>npm i</code> and <code>npm start</code> 
 
-For more detailed instructions, [click here](#)
 
-### NOTED: if you got an issue/ error you can clear the local storage or cookies
->> todo open developer tools on browser, then Application , Right click and clear inside a Local storage tab. >> Refresh.  
