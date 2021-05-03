@@ -17,19 +17,19 @@ FOXES MEDIA using  (Postgres, Skynet-Js, SkynetLabs).
 # Netlify [DEMO](https://foxes-media.netlify.app)
 
 
-### in the end of Skynet url i use tag "#.mp4" to support media player for Videojs that i use for Player
+#### in the end of Skynet url i use tag "#.mp4" to support media player for Videojs that i use for Player
 
 
-### [url sample](https://siasky.net/AACCUKcGJmzUk5FdR0yee8ghUO3NLSzfNVVV9voe4zbGyA#.mp4);
+#### [url sample](https://siasky.net/AACCUKcGJmzUk5FdR0yee8ghUO3NLSzfNVVV9voe4zbGyA#.mp4);
 
 
 #### remove the tag if you use "ReactPlayer", "Plyr" or "video-react".
 
 
-### [sources](https://github.com/Agin-DropDisco/FOXES/blob/e168b4bf6c3dcfed5d9507530cb5a0a1dfcc0e1f/client/src/components/UploadVideo.js#L51)
+#### [sources](https://github.com/Agin-DropDisco/FOXES/blob/e168b4bf6c3dcfed5d9507530cb5a0a1dfcc0e1f/client/src/components/UploadVideo.js#L51)
 
 
-### [see how i use Skynet userID in Sequelize Model](https://github.com/Agin-DropDisco/FOXES/blob/4bf0365d87b78c2ae318f6b062e18aaa0a81e58a/backend/src/controllers/auth.js#L26)
+#### [see how i use Skynet userID in Sequelize Model](https://github.com/Agin-DropDisco/FOXES/blob/4bf0365d87b78c2ae318f6b062e18aaa0a81e58a/backend/src/controllers/auth.js#L26)
 
 
 
