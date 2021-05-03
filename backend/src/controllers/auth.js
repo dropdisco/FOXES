@@ -35,10 +35,12 @@ exports.skyreconnect = async (req, res, next) => {
   }
 
   const skykeyMatch = await bcrypt.compare(skykey, user.skykey);
+
   if (!skykeyMatch) {
     return next({ message: "skykey does not match", statusCode: 400 });
   }
   const payload = { id: user.id };
+  
   const token = jwt.sign(payload, process.env.JWT_SECRET, {
     expiresIn: process.env.JWT_EXPIRE,
   });
