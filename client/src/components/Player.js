@@ -3,16 +3,20 @@ import { useDispatch, useSelector } from "react-redux";
 import videojs from "video.js";
 import { scfoxes } from "../utils";
 import "video.js/dist/video-js.css";
+import '@videojs/themes/dist/city/index.css';
 
 const Player = ({ previewUrl }) => {
+
   const videoRef = useRef(null);
 
   const dispatch = useDispatch();
+  
   const { id: videoId, url: src, thumb: poster } = useSelector(
     (state) => state.video.data
   );
 
   useEffect(() => {
+// 
     const vjsPlayer = videojs(videoRef.current);
 
     if (!previewUrl) {
@@ -21,7 +25,8 @@ const Player = ({ previewUrl }) => {
     }
 
     if (previewUrl) {
-      vjsPlayer.src({ type: "video/mp4", src: previewUrl });
+      vjsPlayer.src({ type: 'video/mp4', src: previewUrl });
+      vjsPlayer.src(src);
     }
 
     vjsPlayer.on("ended", () => {
@@ -40,7 +45,8 @@ const Player = ({ previewUrl }) => {
       <video
         controls
         ref={videoRef}
-        className="video-js vjs-fluid vjs-big-play-centered"
+        source="true"
+        className="video-js vjs-fluid vjs-big-play-centered vjs-theme-city"
       ></video>
     </div>
   );

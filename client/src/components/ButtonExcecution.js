@@ -1,4 +1,3 @@
-// import React from "react";
 import { SkynetClient } from "skynet-js";
 
 const dataDomain = window.location.hostname === "localhost" ? "localhost" : "skey.hns";

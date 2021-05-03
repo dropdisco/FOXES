@@ -28,6 +28,7 @@ import YourVideos from "./pages/YourVideos";
 import LikedVideos from "./pages/LikedVideos";
 
 const AppRouter = () => (
+
   <Router>
     <ScrollToTop />
     <Navbar />

@@ -11,6 +11,7 @@ const GlobalStyle = createGlobalStyle`
 		margin: 0;
 		box-sizing: inherit;
 	}
+
 	:focus {
 		outline: 0 !important;
 	}
@@ -52,6 +53,12 @@ const GlobalStyle = createGlobalStyle`
 	.video-js {
 		border: 2px solid #009ad0;
 	}
+	.switch-wrapper {
+		position: relative;
+	}
+	.switch-wrapper > div {
+		position: absolute;
+	}
 	body {
 		font-size: 1rem;
 		font-family: ${(props) => props.theme.font}, sans-serif;
@@ -89,6 +96,26 @@ const GlobalStyle = createGlobalStyle`
 		font-size: 1rem;
 	}
 
+	.customLoaderFoxes {
+		position: fixed;
+		bottom: 50px;
+		left: 50px;
+		right: 9px;
+		display: -webkit-box;
+		display: -webkit-flex;
+		display: -ms-flexbox;
+		display: block;
+		-webkit-box-pack: justify;
+		-webkit-justify-content: space-between;
+		-ms-flex-pack: justify;
+		justify-content: space-between;
+		-webkit-align-items: center;
+		-webkit-box-align: center;
+		-ms-flex-align: center;
+		align-items: center;
+		width: 9%;
+		z-index: 99999;
+	}
 	.userID-width {
 		width: 150px;
 		display: -webkit-inline-box;
@@ -309,6 +336,23 @@ const GlobalStyle = createGlobalStyle`
 		button {
 			font-size: 0.9rem;
 	  }
+	  
+	}
+	@media screen and (max-width: 500px) {
+
+	.customLoaderFoxes {
+		bottom: 66px;
+    	background: #12101b;
+    	width: 100%;
+    	text-align: center;
+    	line-height: 3;
+    	left: 0;
+    	right: 0;
+    	height: 60px;
+    	font-size: 12px;
+    	border: 2px solid #009ad0;
+	  }
+	  
 	}
 `;
 

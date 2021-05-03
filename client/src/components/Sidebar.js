@@ -22,7 +22,7 @@ import { closeSidebar } from "../reducers/sidebar";
 
 const SidebarWrapper = styled.div`
   position: fixed;
-  top: 60px;
+  top: 70px;
   left: 0;
   height: 100vh;
   width: 240px;

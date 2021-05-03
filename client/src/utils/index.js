@@ -1,4 +1,3 @@
-import axios from "axios";
 import { toast } from "react-toastify";
 
 export const scfoxes = async (endpoint, { body, ...customConfig } = {}) => {
@@ -65,38 +64,6 @@ export const timeSince = (timestamp) => {
   }
 
   return Math.floor(seconds) + " seconds";
-};
-
-export const upload = async (resourceType, file) => {
-  const formData = new FormData();
-  formData.append("upload_preset", "agindropdisco");
-  formData.append("file", file);
-
-  let toastId = null;
-  const config = {
-    onUploadProgress: (p) => {
-      const progress = p.loaded / p.total;
-      if (toastId === null) {
-        toastId = toast("Upload in Progress", {
-          progress,
-        });
-      } else {
-        toast.update(toastId, {
-          progress,
-        });
-      }
-    },
-  };
-
-  const { data } = await axios.post(
-    `${process.env.REACT_APP_CLOUDINARY_ENDPOINT}/${resourceType}/upload`,
-    formData,
-    config
-  );
-
-  toast.dismiss(toastId);
-
-  return data.secure_url;
 };
 
 export const authenticate = async (type, data) => {

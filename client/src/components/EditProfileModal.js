@@ -7,7 +7,13 @@ import Button from "../styles/Button";
 import useInput from "../hooks/useInput";
 import { updateUser } from "../reducers/user";
 import { updateProfile } from "../reducers/profile";
-import { scfoxes, updateUserLocalSt, upload } from "../utils";
+import { scfoxes, updateUserLocalSt } from "../utils";
+import { SkynetClient } from "skynet-js";
+import FoxesLoader from "../styles/UploadLoader";
+import { Progress } from "antd";
+
+const portalUrl = "https://siasky.net";
+const client = new SkynetClient(portalUrl);
 
 const openModal = keyframes`
 	from {
@@ -120,7 +126,10 @@ const Wrapper = styled.div`
 const EditProfileModal = ({ closeModal }) => {
   const dispatch = useDispatch();
   const { data: profile } = useSelector((state) => state.profile);
-
+  const [doprogress, setDoProgress] = useState("");
+  const [dostatus, setDoStatus] = useState("");
+  const [doprogress1, setDoProgress1] = useState("");
+  const [dostatus1, setDoStatus1] = useState("");
   const firstname = useInput(profile.firstname);
   const lastname = useInput(profile.lastname);
   const username = useInput(profile.username);
@@ -130,21 +139,48 @@ const EditProfileModal = ({ closeModal }) => {
   const [cover, setCover] = useState("");
   const [avatar, setAvatar] = useState("");
 
+  const onUploadProgress = (progress, { loaded, total }) => {
+    return setDoProgress(Math.round(progress * 100));
+  };
+
   // handlers for image upload
   const handleCoverUpload = async (e) => {
     const file = e.target.files[0];
 
-    if (file) {
-      setCover(await upload("image", file));
+    try {
+
+      setDoStatus("uploading");
+      const resThumb = await client.uploadFile(file, { onUploadProgress });
+      setDoProgress(0);
+      const parserThumb = await client.getSkylinkUrl(resThumb.skylink);
+      setCover(parserThumb);
+      console.table(parserThumb);
+      setDoStatus("completed");
+      setDoProgress(100);
+
+    } catch (error) {
+      return toast.error("error");
     }
+    
   };
 
   const handleAvatarUpload = async (e) => {
     const file = e.target.files[0];
 
-    if (file) {
-      setAvatar(await upload("image", file));
+    try {
+      setDoStatus1("uploading");
+      const resThumb = await client.uploadFile(file, { onUploadProgress });
+      setDoProgress1(0);
+      const parserThumb = await client.getSkylinkUrl(resThumb.skylink);
+      setAvatar(parserThumb);
+      console.table(resThumb);
+      setDoStatus1("completed");
+      setDoProgress1(100);
+
+    } catch (error) {
+      return toast.error("error");
     }
+
   };
 
   const handleEditProfile = async () => {
@@ -166,20 +202,12 @@ const EditProfileModal = ({ closeModal }) => {
       username: username.value,
     };
 
-    // const setJSON = async (privateKey, dataKey, userID, data) => {
-    //   try {
-    //     await NewSkyClient.db.setJSON(privateKey, dataKey, userID, data);
-    //   } catch (error) {
-    //     console.log('error');
-    //   }
-    // };
 
     if (avatar) data.avatar = avatar;
     if (cover) data.cover = cover;
 
     const updates = { ...data, channelDescription: channelDesc.value };
     dispatch(updateProfile(updates));
-    // setJSON(updates);
     dispatch(updateUser(updates));
     scfoxes(`${process.env.REACT_APP_FOXES_SKY}/users`, {
       body: updates,
@@ -220,6 +248,21 @@ const EditProfileModal = ({ closeModal }) => {
             onChange={handleCoverUpload}
             style={{ display: "none" }}
           />
+                  {dostatus === "uploading" && (
+                <div className="customLoaderFoxes">
+                  <FoxesLoader />
+                  <div className="customId2">
+                    <Progress
+                      strokeColor={{
+                        from: "#108ee9",
+                        to: "#87d068",
+                      }}
+                      percent={doprogress}
+                      status="active"
+                    />
+                  </div>
+                </div>
+        )}
         </div>
 
         <div className="avatar-upload-icon">
@@ -237,6 +280,21 @@ const EditProfileModal = ({ closeModal }) => {
             onChange={handleAvatarUpload}
             style={{ display: "none" }}
           />
+                  {dostatus1 === "uploading" && (
+                <div className="customLoaderFoxes">
+                  <FoxesLoader />
+                  <div className="customId2">
+                    <Progress
+                      strokeColor={{
+                        from: "#108ee9",
+                        to: "#87d068",
+                      }}
+                      percent={doprogress1}
+                      status="active"
+                    />
+                  </div>
+                </div>
+        )}
         </div>
 
         <form>

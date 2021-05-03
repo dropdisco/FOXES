@@ -11,5 +11,8 @@ export const darkTheme = {
   pink: "#F86782",
   purple: "#282A36",
   font: "Exo",
-  brightViolet: "#d4d8f375"
+  brightViolet: "#d4d8f375",
+  blueBlack: "#12101b",
+  greenGray: "#0a768d",
+  
 };

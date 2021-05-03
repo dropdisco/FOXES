@@ -1,37 +1,64 @@
 import React, { useState } from "react";
-import path from "path";
-import { toast } from "react-toastify";
 import { UploadIcon } from "./Icons";
 import UploadVideoModal from "./UploadVideoModal";
-import { upload } from "../utils";
+import { SkynetClient } from "skynet-js";
+import FoxesLoader from "../styles/UploadLoader";
+import { toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
+import { Progress } from "antd";
+
+const portalUrl = "https://siasky.net";
+
+const client = new SkynetClient(portalUrl);
 
 const UploadVideo = () => {
   const [showModal, setShowModal] = useState(false);
   const [previewVideo, setPreviewVideo] = useState("");
+  const [status, setStatus] = useState("");
   const closeModal = () => setShowModal(false);
 
+  const [progress, setProgress] = useState(-1);
+
   const [url, setUrl] = useState("");
-  const [thumbnail, setThumbnail] = useState("");
+
+  const onUploadProgress = (progress, { loaded, total }) => {
+    return setProgress(Math.round(progress * 100));
+  };
 
   const handleVideoUpload = async (e) => {
     const file = e.target.files[0];
+    const size = file.size / 1000000;
 
-    if (file) {
-      const size = file.size / 1000000;
+    if (size > 300) {
+      return toast.error("Sorry, file size should be less than 300MB");
+    }
 
-      if (size > 100) {
-        return toast.error("Sorry, file size should be less than 30MB");
-      }
+    try {
 
-      const url = URL.createObjectURL(file);
-      setPreviewVideo(url);
+      setStatus("uploading");
+      setProgress(0);
+
+      const response = await client.uploadFile(file, { onUploadProgress });
+
       setShowModal(true);
+      setPreviewVideo(response);
 
-      const data = await upload("video", file);
+      console.log(response);
+
+      const parseR = await client.getSkylinkUrl(response.skylink);
+      setPreviewVideo(parseR);
+
+      const skyLinkMp4 = parseR + "#.mp4";
+
+      const data = skyLinkMp4;
+
       setUrl(data);
-
-      const ext = path.extname(data);
-      setThumbnail(data.replace(ext, ".jpg"));
+      setProgress(100);
+      setStatus("completed");
+      setProgress(0)
+      console.log(data);
+    } catch (error) {
+      setStatus("error");
     }
   };
 
@@ -47,11 +74,25 @@ const UploadVideo = () => {
         accept="video/*"
         onChange={handleVideoUpload}
       />
+      {status === "uploading" && (
+        <div className="customLoaderFoxes">
+          <FoxesLoader />
+          <div className="customId2">
+            <Progress
+              strokeColor={{
+                "0%": "#108ee9",
+                "100%": "#87d068",
+              }}
+              width={250}
+              percent={progress}
+            />
+          </div>
+        </div>
+      )}
       {showModal && (
         <UploadVideoModal
           closeModal={closeModal}
           previewVideo={previewVideo}
-          thumbnail={thumbnail}
           url={url}
         />
       )}

@@ -10,15 +10,15 @@ import FoxesLoader from "../styles/Loader";
 import foxesLogo from "../assets/logo.svg";
 
 export const StyledAuth = styled.div`
-    margin: 0 auto;
-    display: block;
-    max-width: 420px;
-    width: 100%;
-    padding-right: 15px;
-    padding-left: 15px;
-    margin-right: auto;
-    margin-left: auto;
-    margin-top: 200px;
+  margin: 0 auto;
+  display: block;
+  max-width: 420px;
+  width: 100%;
+  padding-right: 15px;
+  padding-left: 15px;
+  margin-right: auto;
+  margin-left: auto;
+  margin-top: 200px;
 
   h2 {
     margin-bottom: 3.3rem;
@@ -86,7 +86,7 @@ export const StyledAuth = styled.div`
     right: 100px;
   }
 
-   .uiles {
+  .uiles {
     position: fixed;
     top: 0;
     bottom: 0;
@@ -106,10 +106,11 @@ export const StyledAuth = styled.div`
     height: 45px;
     background-color: #20ebf0;
     background-blend-mode: darken;
-    -moz-transition: background-color .8s cubic-bezier(.215, .61, .355, 1);
-    -o-transition: background-color .8s cubic-bezier(.215, .61, .355, 1);
-    -webkit-transition: background-color .8s cubic-bezier(.215, .61, .355, 1);
-    transition: background-color .8s cubic-bezier(.215, .61, .355, 1);
+    -moz-transition: background-color 0.8s cubic-bezier(0.215, 0.61, 0.355, 1);
+    -o-transition: background-color 0.8s cubic-bezier(0.215, 0.61, 0.355, 1);
+    -webkit-transition: background-color 0.8s
+      cubic-bezier(0.215, 0.61, 0.355, 1);
+    transition: background-color 0.8s cubic-bezier(0.215, 0.61, 0.355, 1);
   }
 
   .sm_uiles.top {
@@ -122,7 +123,7 @@ export const StyledAuth = styled.div`
     left: 0;
     right: 0;
     bottom: 0;
-    opacity: .2;
+    opacity: 0.2;
     background: #928caf40;
   }
 
@@ -142,14 +143,10 @@ export const StyledAuth = styled.div`
       right: 30px;
     }
   }
-
 `;
 
-
 const SkyConnect = ({ setAuth }) => {
-
-
-  // 
+  //
   const dispatch = useDispatch();
   const [mySky, setMySky] = useState("");
   const [userID, setUserID] = useState("");
@@ -158,11 +155,10 @@ const SkyConnect = ({ setAuth }) => {
 
   const portal = "https://siasky.net";
   const client = new SkynetClient(portal);
-  const textFoxes = "Foxes"
-  const textFoxesUsername = "FoxesUser"
-  const firstname = faker.datatype.number({'min': 10, 'max': 50});
+  const textFoxes = "Username";
+  const firstname = faker.datatype.number({ min: 5, max: 500 });
   const lastname = textFoxes + firstname;
-  const username = textFoxesUsername + firstname;
+  const username = lastname;
   const dataDomain = window.location.hostname === "localhost" ? "localhost" : "skey.hns";
   const contentRecord = new ContentRecordDAC();
   const skykey = "PAF6_Yq2WW_DafoVCl54eyuAK2B2q4RJuSOwFtoihUCE3w";
@@ -179,7 +175,7 @@ const SkyConnect = ({ setAuth }) => {
       firstname,
       lastname,
       userID,
-      skykey
+      skykey,
     };
     setLoggedIn(status);
     if (status) {
@@ -187,7 +183,7 @@ const SkyConnect = ({ setAuth }) => {
       console.table({ username, firstname, lastname, userID });
       setLoading(false);
       dispatch(skyconnect({ payload }));
-    } 
+    }
   };
   const mySkyDisconnect = async () => {
     await mySky.logout();
@@ -197,7 +193,7 @@ const SkyConnect = ({ setAuth }) => {
   const buttonSetting = async () => {
     await LogoutMySky();
     setAuth("SkyReConnect");
-  }
+  };
 
   useEffect(() => {
     const initMySky = async () => {
@@ -211,7 +207,7 @@ const SkyConnect = ({ setAuth }) => {
         if (loggedIn) {
           setUserID(await mySky.userID());
           console.table(userID);
-        } 
+        }
       } catch (e) {
         console.error(e);
       }
@@ -229,24 +225,24 @@ const SkyConnect = ({ setAuth }) => {
   return (
     <StyledAuth>
       <div className="foxes_uiles-left">
-      <div className="left_uiles uiles">
-        <div className="sm_uiles top"></div>
-        <div className="mid_uiles"></div>
-        <div className="sm_uiles bot"></div>
-      </div>
+        <div className="left_uiles uiles">
+          <div className="sm_uiles top"></div>
+          <div className="mid_uiles"></div>
+          <div className="sm_uiles bot"></div>
+        </div>
       </div>
       <div className="foxes_uiles-right">
-      <div className="right uiles">
-        <div className="sm_uiles top"></div>
-        <div className="mid_uiles"></div>
-        <div className="sm_uiles bot"></div>
-      </div>
+        <div className="right uiles">
+          <div className="sm_uiles top"></div>
+          <div className="mid_uiles"></div>
+          <div className="sm_uiles bot"></div>
+        </div>
       </div>
       <img src={foxesLogo} className="foxeslogo" alt="foxesLogo" />
       <h2 className="sky-connect-wtih">
         <span>FOXES MEDIA</span>
-        </h2>
-      <form style={{textAlign: "center"}}>
+      </h2>
+      <form style={{ textAlign: "center" }}>
         {loading && (
           <button size="medium">
             <FoxesLoader />
@@ -260,11 +256,16 @@ const SkyConnect = ({ setAuth }) => {
         {!loading && loggedIn && (
           <button onClick={mySkyDisconnect} size="medium">
             <FoxesLoader />
-            <span style={{color: "#12101b", fontWeight: "500"}}>Please Wait...</span>
+            <span style={{ color: "#12101b", fontWeight: "500" }}>
+              Please Wait...
+            </span>
           </button>
         )}
-          <div className="action input-group">
-          <span className="pointer sky-connect-wtih" onClick={() => buttonSetting()}>
+        <div className="action input-group">
+          <span
+            className="pointer sky-connect-wtih"
+            onClick={() => buttonSetting()}
+          >
             <span className="foxes-bordering">Connect With MySky</span>
           </span>
         </div>
