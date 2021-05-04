@@ -28,7 +28,7 @@ FOXES MEDIA using  (Postgres, Skynet-Js, SkynetLabs).
 
 
 
-## [Edit Profile](https://siasky.net/AABQa2Pomn69UE9_h0D1M3UGA6jtDciQIW7NUu8MXUgr4Q)
+## [Edit Profile](https://siasky.net/AADyNFyIBe9_wWXy0Zg1euGMZtipLWQtF8K_LfDn-XwX1A)
 
 
 
