@@ -14,9 +14,6 @@ FOXES MEDIA using  (Postgres, Skynet-Js, SkynetLabs).
 # SiaSkynet [DEMO](https://0008umghp419r4vvf17m8lb369gbketccmcdvpee5puhhebtnoj0ruo.siasky.net)
 
 
-# Netlify [DEMO](https://foxes-media.netlify.app)
-
-
 #### in the end of Skynet url i use tag "#.mp4" to support media player for Videojs that i use for Player
 
 
