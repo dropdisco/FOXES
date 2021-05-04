@@ -14,7 +14,30 @@ FOXES MEDIA using  (Postgres, Skynet-Js, SkynetLabs).
 # SiaSkynet [DEMO](https://0008umghp419r4vvf17m8lb369gbketccmcdvpee5puhhebtnoj0ruo.siasky.net)
 
 
+## [Login Video Demo](https://siasky.net/AABQa2Pomn69UE9_h0D1M3UGA6jtDciQIW7NUu8MXUgr4Q)
+
+
+## [Upload Video Demo](https://siasky.net/_BGWW4sUn2R2Zs3reqyovRwVhX5giICwObPSb7SLYEO0Ig)
+
+
+## [Upload Video && Thumbnail Demo](https://siasky.net/AAAM7C_qs4ucDSW4SSH1u3mBLNYp2yXTGkj8kvfZVr2Wxw)
+
+
+
+## [Edit Cover Profile Demo](https://siasky.net/AABsw-zbVFa2n2Y1sXnKOwEfX0I2cUd9BY-T1PZUPx3vwg)
+
+
+
+## [Edit Profile Demo](https://siasky.net/AABQa2Pomn69UE9_h0D1M3UGA6jtDciQIW7NUu8MXUgr4Q)
+
+
+
+## [Test Comment, Subscribe, and View User Profile Demo](https://siasky.net/AAAcRcLfxaFzA5_hWhkc9NsBHW-nsncu6ryZaLMFC-aJWQ)
+
+
+
 #### in the end of Skynet url i use tag "#.mp4" to support media player for Videojs that i use for Player
+
 
 
 #### [url sample](https://siasky.net/AACCUKcGJmzUk5FdR0yee8ghUO3NLSzfNVVV9voe4zbGyA#.mp4)
