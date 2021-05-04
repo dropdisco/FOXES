@@ -11,28 +11,28 @@ FOXES MEDIA using  (Postgres, Skynet-Js, SkynetLabs).
 ### Check out the deployed site
 
 
-# [Website Live Demo](https://0008umghp419r4vvf17m8lb369gbketccmcdvpee5puhhebtnoj0ruo.siasky.net)
+# [Website Live ](https://0008umghp419r4vvf17m8lb369gbketccmcdvpee5puhhebtnoj0ruo.siasky.net)
 
 
-## [Login Video Demo](https://siasky.net/AABQa2Pomn69UE9_h0D1M3UGA6jtDciQIW7NUu8MXUgr4Q)
+## [Login Video](https://siasky.net/AABQa2Pomn69UE9_h0D1M3UGA6jtDciQIW7NUu8MXUgr4Q)
 
 
-## [Upload Video Demo](https://siasky.net/_BGWW4sUn2R2Zs3reqyovRwVhX5giICwObPSb7SLYEO0Ig)
+## [Upload Video](https://siasky.net/_BGWW4sUn2R2Zs3reqyovRwVhX5giICwObPSb7SLYEO0Ig)
 
 
-## [Upload Video && Thumbnail Demo](https://siasky.net/AAAM7C_qs4ucDSW4SSH1u3mBLNYp2yXTGkj8kvfZVr2Wxw)
-
-
-
-## [Edit Cover Profile Demo](https://siasky.net/AABsw-zbVFa2n2Y1sXnKOwEfX0I2cUd9BY-T1PZUPx3vwg)
+## [Upload Video && Thumbnail](https://siasky.net/AAAM7C_qs4ucDSW4SSH1u3mBLNYp2yXTGkj8kvfZVr2Wxw)
 
 
 
-## [Edit Profile Demo](https://siasky.net/AABQa2Pomn69UE9_h0D1M3UGA6jtDciQIW7NUu8MXUgr4Q)
+## [Edit Cover Profile](https://siasky.net/AABsw-zbVFa2n2Y1sXnKOwEfX0I2cUd9BY-T1PZUPx3vwg)
 
 
 
-## [Test Comment | Subscribe | Like and View User Profile Demo](https://siasky.net/AAAcRcLfxaFzA5_hWhkc9NsBHW-nsncu6ryZaLMFC-aJWQ)
+## [Edit Profile](https://siasky.net/AABQa2Pomn69UE9_h0D1M3UGA6jtDciQIW7NUu8MXUgr4Q)
+
+
+
+## [Test Comment | Subscribe | Like and View User Profile](https://siasky.net/AAAcRcLfxaFzA5_hWhkc9NsBHW-nsncu6ryZaLMFC-aJWQ)
 
 
 
