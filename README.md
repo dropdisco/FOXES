@@ -32,7 +32,7 @@ FOXES MEDIA using  (Postgres, Skynet-Js, SkynetLabs).
 
 
 
-## [Test Comment, Subscribe, and View User Profile Demo](https://siasky.net/AAAcRcLfxaFzA5_hWhkc9NsBHW-nsncu6ryZaLMFC-aJWQ)
+## [Test Comment | Subscribe | Like and View User Profile Demo](https://siasky.net/AAAcRcLfxaFzA5_hWhkc9NsBHW-nsncu6ryZaLMFC-aJWQ)
 
 
 
