@@ -50,7 +50,8 @@ FOXES MEDIA using  (Postgres, Skynet-Js, SkynetLabs).
 
 #### [see how i use Skynet userID in Sequelize Model](https://github.com/Agin-DropDisco/FOXES/blob/4bf0365d87b78c2ae318f6b062e18aaa0a81e58a/backend/src/controllers/auth.js#L26)
 
-
+<p align="center">
+  
 #### ⏬ ⏬ see sample how i use SkyDB ⏬ ⏬
 
 ##### [1](https://github.com/Agin-DropDisco/FOXES/blob/3db26815bfd4a129c10373702cac7190c538644d/client/src/components/SkyConnect.js#L211)
@@ -61,6 +62,7 @@ FOXES MEDIA using  (Postgres, Skynet-Js, SkynetLabs).
 
 ##### [3](https://github.com/Agin-DropDisco/FOXES/blob/3db26815bfd4a129c10373702cac7190c538644d/client/src/components/EditProfileModal.js#L211)
 
+</p>
 
 
 
