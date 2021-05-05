@@ -11,28 +11,28 @@ FOXES MEDIA using  (Postgres, Skynet-Js, SkynetLabs).
 ### Check out the deployed site
 
 
-# [Website Live ](https://0008umghp419r4vvf17m8lb369gbketccmcdvpee5puhhebtnoj0ruo.siasky.net)
+### [Website Live ](https://0008umghp419r4vvf17m8lb369gbketccmcdvpee5puhhebtnoj0ruo.siasky.net)
 
 
-## [Login Video](https://siasky.net/AABQa2Pomn69UE9_h0D1M3UGA6jtDciQIW7NUu8MXUgr4Q)
+### [Login Video](https://siasky.net/AABQa2Pomn69UE9_h0D1M3UGA6jtDciQIW7NUu8MXUgr4Q)
 
 
-## [Upload Video](https://siasky.net/_BGWW4sUn2R2Zs3reqyovRwVhX5giICwObPSb7SLYEO0Ig)
+### [Upload Video](https://siasky.net/_BGWW4sUn2R2Zs3reqyovRwVhX5giICwObPSb7SLYEO0Ig)
 
 
-## [Upload Video && Thumbnail](https://siasky.net/AAAM7C_qs4ucDSW4SSH1u3mBLNYp2yXTGkj8kvfZVr2Wxw)
-
-
-
-## [Edit Cover Profile](https://siasky.net/AABsw-zbVFa2n2Y1sXnKOwEfX0I2cUd9BY-T1PZUPx3vwg)
+### [Upload Video && Thumbnail](https://siasky.net/AAAM7C_qs4ucDSW4SSH1u3mBLNYp2yXTGkj8kvfZVr2Wxw)
 
 
 
-## [Edit Profile](https://siasky.net/AADyNFyIBe9_wWXy0Zg1euGMZtipLWQtF8K_LfDn-XwX1A)
+### [Edit Cover Profile](https://siasky.net/AABsw-zbVFa2n2Y1sXnKOwEfX0I2cUd9BY-T1PZUPx3vwg)
 
 
 
-## [Test Comment | Subscribe | Like and View User Profile](https://siasky.net/AAAcRcLfxaFzA5_hWhkc9NsBHW-nsncu6ryZaLMFC-aJWQ)
+### [Edit Profile](https://siasky.net/AADyNFyIBe9_wWXy0Zg1euGMZtipLWQtF8K_LfDn-XwX1A)
+
+
+
+### [Test Comment | Subscribe | Like and View User Profile](https://siasky.net/AAAcRcLfxaFzA5_hWhkc9NsBHW-nsncu6ryZaLMFC-aJWQ)
 
 
 
@@ -40,39 +40,39 @@ FOXES MEDIA using  (Postgres, Skynet-Js, SkynetLabs).
 
 
 
-#### [url sample](https://siasky.net/AACCUKcGJmzUk5FdR0yee8ghUO3NLSzfNVVV9voe4zbGyA#.mp4)
+### [url sample](https://siasky.net/AACCUKcGJmzUk5FdR0yee8ghUO3NLSzfNVVV9voe4zbGyA#.mp4)
 
 >> remove the tag if you use "ReactPlayer", "Plyr" or "video-react".
 
 
-#### [sources](https://github.com/Agin-DropDisco/FOXES/blob/e168b4bf6c3dcfed5d9507530cb5a0a1dfcc0e1f/client/src/components/UploadVideo.js#L51)
+### [sources](https://github.com/Agin-DropDisco/FOXES/blob/e168b4bf6c3dcfed5d9507530cb5a0a1dfcc0e1f/client/src/components/UploadVideo.js#L51)
 
 
-#### [see how i use Skynet userID in Sequelize Model](https://github.com/Agin-DropDisco/FOXES/blob/4bf0365d87b78c2ae318f6b062e18aaa0a81e58a/backend/src/controllers/auth.js#L26)
+### [see how i use Skynet userID in Sequelize Model](https://github.com/Agin-DropDisco/FOXES/blob/4bf0365d87b78c2ae318f6b062e18aaa0a81e58a/backend/src/controllers/auth.js#L26)
 
 <p align="center">
   
-#### ⏬ ⏬ see sample how i use SkyDB ⏬ ⏬
+### ⏬ ⏬ see sample how i use SkyDB ⏬ ⏬
 
-##### [1](https://github.com/Agin-DropDisco/FOXES/blob/3db26815bfd4a129c10373702cac7190c538644d/client/src/components/SkyConnect.js#L211)
-
-
-##### [2](https://github.com/Agin-DropDisco/FOXES/blob/3db26815bfd4a129c10373702cac7190c538644d/client/src/components/SkyReConnect.js#L181)
+### [1](https://github.com/Agin-DropDisco/FOXES/blob/3db26815bfd4a129c10373702cac7190c538644d/client/src/components/SkyConnect.js#L211)
 
 
-##### [3](https://github.com/Agin-DropDisco/FOXES/blob/3db26815bfd4a129c10373702cac7190c538644d/client/src/components/EditProfileModal.js#L211)
+### [2](https://github.com/Agin-DropDisco/FOXES/blob/3db26815bfd4a129c10373702cac7190c538644d/client/src/components/SkyReConnect.js#L181)
+
+
+### [3](https://github.com/Agin-DropDisco/FOXES/blob/3db26815bfd4a129c10373702cac7190c538644d/client/src/components/EditProfileModal.js#L211)
 
 </p>
 
 
 
-## Upload Video and Thumbnail and Push to Skynet
+### Upload Video and Thumbnail and Push to Skynet
 
 <img src="./ss/create-thumbnail.png">
 
 
 
-## Modal Popup Will set to true if all the processing file has been done
+### Modal Popup Will set to true if all the processing file has been done
 
 <img src="./ss/upload-andpush-toskynet.png">
 
@@ -83,20 +83,20 @@ FOXES MEDIA using  (Postgres, Skynet-Js, SkynetLabs).
 
 
 
-## Home View 
+### Home View 
 <img src="./ss/home.png">
 
 
 
 
-## Profile Channel View
+### Profile Channel View
 <img src="./ss/profile-channel.png">
 
 
 
 
 
-## Recomended Video View 
+### Recomended Video View 
 
 <img src="./ss/video-recomended.png">
 
@@ -105,7 +105,7 @@ FOXES MEDIA using  (Postgres, Skynet-Js, SkynetLabs).
 
 
 
-## Trending Video View 
+### Trending Video View 
 
 <img src="./ss/trending-video.png">
 
@@ -113,7 +113,7 @@ FOXES MEDIA using  (Postgres, Skynet-Js, SkynetLabs).
 
 
 
-## Edit Profile View 
+### Edit Profile View 
 
 <img src="./ss/edit-profile.png">
 
@@ -121,7 +121,7 @@ FOXES MEDIA using  (Postgres, Skynet-Js, SkynetLabs).
 
 
 
-## Mobile UI View
+### Mobile UI View
 <p align="center">
 <img src="./ss/mobile-ui.png">
 </p>
@@ -130,7 +130,7 @@ FOXES MEDIA using  (Postgres, Skynet-Js, SkynetLabs).
 
 
 
-## Mobile UI Watch View
+### Mobile UI Watch View
 <p align="center">
 <img src="./ss/mobile-ui-watch.png">
 </p>
@@ -139,7 +139,7 @@ FOXES MEDIA using  (Postgres, Skynet-Js, SkynetLabs).
 
 
 
-## Core packages
+### Core packages
 
 1. Redux 
 2. React Hash Router as * Router  - Routing
@@ -147,7 +147,7 @@ FOXES MEDIA using  (Postgres, Skynet-Js, SkynetLabs).
 4. VideoJs
 
 
-## Features
+### Features
 
 1. Connect using MySky
 2. Upload video
@@ -161,7 +161,7 @@ FOXES MEDIA using  (Postgres, Skynet-Js, SkynetLabs).
 10. History
 
 
-## Running locally
+### Running locally
 
 At the root of your project create an .env file with the following contents:
 
