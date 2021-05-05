@@ -14,6 +14,9 @@ FOXES MEDIA using  (Postgres, Skynet-Js, SkynetLabs).
 ### [Website Live ](https://000eagktcalkfnmdp22i66lcs371mfqfngpmo743liq6jtths2052eg.siasky.net/)
 
 
+### Check out the Video Demo
+
+
 ### [Login Video](https://siasky.net/AABQa2Pomn69UE9_h0D1M3UGA6jtDciQIW7NUu8MXUgr4Q)
 
 
@@ -33,6 +36,10 @@ FOXES MEDIA using  (Postgres, Skynet-Js, SkynetLabs).
 
 
 ### [Test Comment | Subscribe | Like and View User Profile](https://siasky.net/AAAcRcLfxaFzA5_hWhkc9NsBHW-nsncu6ryZaLMFC-aJWQ)
+
+
+
+### Check out the Sample Code
 
 
 ### [see how i use Skynet userID in Sequelize Model](https://github.com/Agin-DropDisco/FOXES/blob/4bf0365d87b78c2ae318f6b062e18aaa0a81e58a/backend/src/controllers/auth.js#L26)
