@@ -1,15 +1,12 @@
 import React, { useState } from "react";
 import { UploadIcon } from "./Icons";
 import UploadVideoModal from "./UploadVideoModal";
-import { SkynetClient } from "skynet-js";
+import { client } from "../utils";
 import FoxesLoader from "../styles/UploadLoader";
 import { toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import { Progress } from "antd";
 
-const portalUrl = "https://siasky.net";
-
-const client = new SkynetClient(portalUrl);
 
 const UploadVideo = () => {
   const [showModal, setShowModal] = useState(false);

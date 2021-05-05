@@ -1,20 +1,16 @@
 import React, { useState } from "react";
+import { client } from "../utils";
 import { useSelector, useDispatch } from "react-redux";
 import styled, { keyframes } from "styled-components";
 import { CloseIcon } from "./Icons";
 import { addToRecommendation } from "../reducers/recommendation";
 import { scfoxes } from "../utils";
-import { SkynetClient } from "skynet-js";
 import { toast } from "react-toastify";
 import { Progress } from "antd";
 import FoxesLoader from "../styles/UploadLoader";
 import useInput from "../hooks/useInput";
 import Player from "./Player";
 import Button from "../styles/Button";
-
-
-const portalUrl = "https://siasky.net";
-const client = new SkynetClient(portalUrl);
 
 const openModal = keyframes`
 	from {

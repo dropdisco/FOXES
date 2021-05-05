@@ -6,6 +6,7 @@ import Label from "../styles/Label";
 import { 
   GiCowled
   } from "react-icons/gi";
+  
 const Wrapper = styled.div`
   display: grid;
   grid-template-columns: repeat(4, 1fr);

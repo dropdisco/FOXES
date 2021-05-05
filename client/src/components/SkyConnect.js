@@ -1,13 +1,17 @@
 import React, { useState, useEffect } from "react";
+import { parseSkylink, genKeyPairFromSeed } from "skynet-js";
+import { ContentRecordDAC } from "@skynetlabs/content-record-library";
+import { client, skykey, seed, dataKey } from "../utils";
 import { useDispatch } from "react-redux";
 import styled from "styled-components";
 import faker from "faker";
 import { skyconnect } from "../reducers/user";
-import { ContentRecordDAC } from "@skynetlabs/content-record-library";
-import { SkynetClient } from "skynet-js";
+import { toast } from "react-toastify";
 import LogoutMySky from "./ButtonExcecution";
 import FoxesLoader from "../styles/Loader";
 import foxesLogo from "../assets/logo.svg";
+
+
 
 export const StyledAuth = styled.div`
   margin: 0 auto;
@@ -146,23 +150,47 @@ export const StyledAuth = styled.div`
 `;
 
 const SkyConnect = ({ setAuth }) => {
-  //
+
   const dispatch = useDispatch();
   const [mySky, setMySky] = useState("");
   const [userID, setUserID] = useState("");
   const [loading, setLoading] = useState(false);
   const [loggedIn, setLoggedIn] = useState(null);
+  const { publicKey, privateKey } = genKeyPairFromSeed(seed);
 
-  const portal = "https://siasky.net";
-  const client = new SkynetClient(portal);
   const textFoxes = "Username";
   const firstname = faker.datatype.number({ min: 5, max: 500 });
   const lastname = textFoxes + firstname;
   const username = lastname;
   const dataDomain = window.location.hostname === "localhost" ? "localhost" : "skey.hns";
   const contentRecord = new ContentRecordDAC();
-  const skykey = "PAF6_Yq2WW_DafoVCl54eyuAK2B2q4RJuSOwFtoihUCE3w";
 
+  const registryWrite = async () => {
+
+    try {
+      
+      const rawSkylink = parseSkylink(skykey);
+      const { entry } = await client.registry.getEntry(publicKey, dataKey, {
+        timeout: 2,
+      });
+
+      const revision = entry ? entry.revision + 1n : 0n;
+
+      const updatedEntry = {
+        datakey: dataKey,
+        data: rawSkylink,
+        revision,
+      };
+
+      await client.registry.setEntry(privateKey, updatedEntry);
+      console.table({dataKey, privateKey});
+    } catch (error) {
+
+      return toast.error(error);
+    }
+  };
+  
+  
   const mySkyConnect = async (e) => {
     e.preventDefault();
     setLoading(true);
@@ -170,6 +198,8 @@ const SkyConnect = ({ setAuth }) => {
     const status = await mySky.requestLoginAccess();
     await mySky.loadDacs(contentRecord);
     const userID = await mySky.userID();
+
+
     const payload = {
       username,
       firstname,
@@ -177,23 +207,43 @@ const SkyConnect = ({ setAuth }) => {
       userID,
       skykey,
     };
+
+    const setJSON = async () => {
+
+      try {
+        await client.db.setJSON(privateKey, dataKey, payload);
+        console.log('%c%s', 'color: white; background: green; font-size: 15px;','SetJSON ⏬');
+        console.table({privateKey, dataKey, payload});
+      } catch (error) {
+        return toast.error(error);
+      }
+    };
+
     setLoggedIn(status);
+
     if (status) {
+      await registryWrite();
+      await setJSON();
       setUserID(await mySky.userID());
-      console.table({ username, firstname, lastname, userID });
       setLoading(false);
       dispatch(skyconnect({ payload }));
+      console.table({ username, firstname, lastname, userID });
     }
+    
   };
+
+
   const mySkyDisconnect = async () => {
     await mySky.logout();
     setLoggedIn(false);
     setUserID("");
   };
+
   const buttonSetting = async () => {
     await LogoutMySky();
     setAuth("SkyReConnect");
   };
+
 
   useEffect(() => {
     const initMySky = async () => {

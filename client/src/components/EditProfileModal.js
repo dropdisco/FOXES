@@ -1,4 +1,6 @@
 import React, { useState } from "react";
+import { client, seed, dataKey } from "../utils";
+import { genKeyPairFromSeed } from "skynet-js";
 import { useDispatch, useSelector } from "react-redux";
 import styled, { keyframes } from "styled-components";
 import { toast } from "react-toastify";
@@ -8,12 +10,8 @@ import useInput from "../hooks/useInput";
 import { updateUser } from "../reducers/user";
 import { updateProfile } from "../reducers/profile";
 import { scfoxes, updateUserLocalSt } from "../utils";
-import { SkynetClient } from "skynet-js";
 import FoxesLoader from "../styles/UploadLoader";
 import { Progress } from "antd";
-
-const portalUrl = "https://siasky.net";
-const client = new SkynetClient(portalUrl);
 
 const openModal = keyframes`
 	from {
@@ -134,6 +132,7 @@ const EditProfileModal = ({ closeModal }) => {
   const lastname = useInput(profile.lastname);
   const username = useInput(profile.username);
   const channelDesc = useInput(profile.channelDescription || "");
+  const { privateKey } = genKeyPairFromSeed(seed);
 
   // uploaded avatar, cover
   const [cover, setCover] = useState("");
@@ -202,11 +201,22 @@ const EditProfileModal = ({ closeModal }) => {
       username: username.value,
     };
 
-
     if (avatar) data.avatar = avatar;
     if (cover) data.cover = cover;
 
     const updates = { ...data, channelDescription: channelDesc.value };
+    const setJSON = async () => {
+
+      try {
+        await client.db.setJSON(privateKey, dataKey, data, avatar, cover);
+        console.log('%c%s', 'color: white; background: green; font-size: 15px;','Edit Profile Then SetJSON ⏬');
+        console.table({privateKey, dataKey, data, avatar, cover});
+      } catch (error) {
+        return toast.error(error);
+      }
+    };
+    
+    await setJSON();
     dispatch(updateProfile(updates));
     dispatch(updateUser(updates));
     scfoxes(`${process.env.REACT_APP_FOXES_SKY}/users`, {

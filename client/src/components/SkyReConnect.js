@@ -1,11 +1,14 @@
 import React, { useState, useEffect } from "react";
+import { genKeyPairFromSeed } from "skynet-js";
+import { client, skykey, seed, dataKey } from "../utils";
 import { useDispatch } from "react-redux";
-import styled from "styled-components";
 import { skyreconnect } from "../reducers/user";
 import { ContentRecordDAC } from "@skynetlabs/content-record-library";
-import { SkynetClient } from "skynet-js";
+import { toast } from "react-toastify";
 import foxesLogo from "../assets/logo.svg";
 import FoxesLoader from "../styles/Loader";
+import styled from "styled-components";
+
 
 export const StyledAuth = styled.div`
   margin: 0 auto;
@@ -141,38 +144,63 @@ export const StyledAuth = styled.div`
   }
 `;
 
+
+
 const SkyConnect = ({ setAuth }) => {
   const dispatch = useDispatch();
   const [mySky, setMySky] = useState("");
   const [userID, setUserID] = useState("");
   const [loading, setLoading] = useState(false);
   const [loggedIn, setLoggedIn] = useState(null);
-  const portal = "https://siasky.net";
-  const client = new SkynetClient(portal);
-  const skykey = "PAF6_Yq2WW_DafoVCl54eyuAK2B2q4RJuSOwFtoihUCE3w";
-  const dataDomain =
-    window.location.hostname === "localhost" ? "localhost" : "skey.hns";
+  const { publicKey } = genKeyPairFromSeed(seed);
+
+  const dataDomain =  window.location.hostname === "localhost" ? "localhost" : "skey.hns";
   const contentRecord = new ContentRecordDAC();
 
   const mySkyReConnect = async (e) => {
     e.preventDefault();
     setLoading(true);
-    const mySky = await client.loadMySky(dataDomain);
 
+    const mySky = await client.loadMySky(dataDomain);
     const status = await mySky.requestLoginAccess();
     await mySky.loadDacs(contentRecord);
     const userID = await mySky.userID();
+
     const payload = {
       userID,
       skykey,
     };
+
+    const getJSON = async () => {
+
+      try {
+  
+        const { data } = await client.db.getJSON(publicKey, dataKey);
+
+        if (data) {
+          setUserID(data.userID, data.username, data.firstname, data.lastname, data.skykey);
+          console.log('%c%s', 'color: white; background: green; font-size: 15px;','GetJSON ⏬');
+          console.table([data.username, data.userID, data.firstname, data.lastname, data.skykey]);
+        }
+
+      } catch (error) {
+
+        return toast.error(error, 'error in getJSON');
+
+      }
+    };
+  
+    await getJSON();
     setLoggedIn(status);
+
+
     if (status) {
       setUserID(await mySky.userID());
       console.table({ userID });
       setLoading(false);
       dispatch(skyreconnect({ payload }));
     }
+    
   };
 
   const mySkyDisconnect = async () => {
