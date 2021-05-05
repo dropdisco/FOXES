@@ -1,5 +1,16 @@
 import { toast } from "react-toastify";
+import { SkynetClient } from "skynet-js";
 
+export const portal = process.env.REACT_APP_SKYNET_PORTAL;
+
+export const skykey = process.env.REACT_APP_SKYNET_SKYKEY;
+
+export const seed = process.env.REACT_APP_SKYNET_SKYSEED;
+
+export const dataKey = process.env.REACT_APP_SKYNET_SKYDATAKEY;
+
+export const client = new SkynetClient(portal);
+ 
 export const scfoxes = async (endpoint, { body, ...customConfig } = {}) => {
   const user = JSON.parse(localStorage.getItem("user"));
 
