@@ -11,7 +11,7 @@ FOXES MEDIA using  (Postgres, Skynet-Js, SkynetLabs).
 ### Check out the deployed site
 
 
-### [Website Live ](https://0008umghp419r4vvf17m8lb369gbketccmcdvpee5puhhebtnoj0ruo.siasky.net)
+### [Website Live ](https://000eagktcalkfnmdp22i66lcs371mfqfngpmo743liq6jtths2052eg.siasky.net/)
 
 
 ### [Login Video](https://siasky.net/AABQa2Pomn69UE9_h0D1M3UGA6jtDciQIW7NUu8MXUgr4Q)
