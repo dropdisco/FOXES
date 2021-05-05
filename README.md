@@ -51,6 +51,18 @@ FOXES MEDIA using  (Postgres, Skynet-Js, SkynetLabs).
 #### [see how i use Skynet userID in Sequelize Model](https://github.com/Agin-DropDisco/FOXES/blob/4bf0365d87b78c2ae318f6b062e18aaa0a81e58a/backend/src/controllers/auth.js#L26)
 
 
+#### ⏬ ⏬ see sample how i use SkyDB ⏬ ⏬
+
+##### [1](https://github.com/Agin-DropDisco/FOXES/blob/3db26815bfd4a129c10373702cac7190c538644d/client/src/components/SkyConnect.js#L211)
+
+
+##### [2](https://github.com/Agin-DropDisco/FOXES/blob/3db26815bfd4a129c10373702cac7190c538644d/client/src/components/SkyReConnect.js#L181)
+
+
+##### [3](https://github.com/Agin-DropDisco/FOXES/blob/3db26815bfd4a129c10373702cac7190c538644d/client/src/components/EditProfileModal.js#L211)
+
+
+
 
 ## Upload Video and Thumbnail and Push to Skynet
 
@@ -153,8 +165,11 @@ At the root of your project create an .env file with the following contents:
 
 ```bash
 # BE stands for Backend Endpoint
-REACT_APP_FOXES_SKY= <Your Backend Endpoint>
-REACT_APP_SKYNET_PORTAL = <Portal>
+REACT_APP_FOXES_SKY=<Your Backend Endpoint>
+REACT_APP_SKYNET_PORTAL =<Portal>
+REACT_APP_SKYNET_SKYKEY=<SkyKey>
+REACT_APP_SKYNET_SKYSEED=<SkySeed>
+REACT_APP_SKYNET_SKYDATAKEY=<SkyDataKey>
 ```
 
 Then run <code>npm i</code> and <code>npm start</code> 
